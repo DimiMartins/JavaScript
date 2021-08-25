@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Um pouco de CSS</title>
+    <link rel="stylesheet" href="CPoucoDeCSS.css"><!--dentro de href vai o nome do arquivo-->
+    <style>
+        /**Aqui vai codigo css
+        PARA CONEXÃO COM HTML E CSS 
+        A FORMA MAIS FACIL É A PARTIR
+        DO NOME**/
+
+        /**Criando um estilo para h1 **/
+        h1{
+            /**display: none;/**todos os h1 vão sumir**/
+            /**left: 400px;/**alinhamento a direita**/
+            font-size: 20px;
+        }
+
+        /**criando uma classe css para aplicar essa classe em varios locais
+        criado a partir .nomeDaClasse**/
+        .fundoVermelho{
+            background-color: #C00; /**usando rgb**/
+
+        }
+        .negrito{
+            font-weight: bold;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <!--praticamente todas as tegs do html tem o id
+    id= idetificador unico dentro de uma pagina
+    class= tipo de identificador, associado ao uso de estilo
+    usado para aplicar estilo em uma classe mais de uma vez
+-->
+        <h1 class="fundoVermelho">Css</h1>
+        <!--posso usar o style dentro do span(MENOS RECOMENDADO)-->
+        <span id="textoPrincipal">Texto 1</span><br/>
+        <span class="fundoVermelho ">Texto 2</span><br/><!--duas classes aplicadas dentro desse spam-->
+        <span class="fundoVermelho negrito" wm-atrib>Texto 3</span><!--pegar o nome (wm-atributo) e aplicar determinada ação-->
+    </body>
+</html>
+
+<!--document.querySelector('[wm-atrib]') ==acha todas as classes ou id com o nome wb-atrib-->

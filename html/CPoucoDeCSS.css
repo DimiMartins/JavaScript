@@ -1,0 +1,10 @@
+/*pegando somente o id para referenciar*/
+/**Criando um estilo para um id
+        USA-SE #nome**/
+        #textoPrincipal{
+            font-size: 40px;
+            font-weight: bold;
+            background-color: #444;/**cor de fundo**/
+            color: #fff;/**cor da fonte**/
+            margin-bottom: 50px;/**vai dar um espaço para baixo de um elemento para o outro**/
+        }

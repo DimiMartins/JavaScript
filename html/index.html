@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios HTML</title>
+    <style>
+        /*seção responsavel por gerar o conteudo é conteudo(section id="conteudo")*/
+        #conteudo {
+            padding: 30px 0px;/*espaçamento*/
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exercícios HTML</h1>
+    </header>
+    <nav>
+        <a href wm-nav="exercicios/teste.html">00 - teste</a>|<!--vou ter um link para cada exercicio-->
+        <a href wm-nav="exercicios/texto1.html">01 - texto 1</a>|<!--vou ter um link para cada exercicio-->
+        <a href wm-nav="exercicios/texto2.html">02 - texto 2</a>|<!--vou ter um link para cada exercicio-->
+        <a href wm-nav="exercicios/listas.html">03 - listas </a>|<!--vou ter um link para cada exercicio-->
+        <a href wm-nav="exercicios/listaAninhada.html">04 - lista Aninhada </a>|<!--vou ter um link para cada exercicio-->
+        <a href wm-nav="exercicios/links.html">05 - Links </a>|<!--vou ter um link para cada exercicio-->
+        <a href wm-nav="exercicios/tabela.html">06 - tabela </a>|<!--vou ter um link para cada exercicio-->
+        <a href wm-nav="exercicios/form/form.html">07 - Formulario </a>|<!--vou ter um link para cada exercicio-->
+        <a href wm-nav="exercicios/imagens.html">08 - imagens </a>|<!--vou ter um link para cada exercicio-->
+        <a href wm-nav="exercicios/video.html">09 - video </a>|<!--vou ter um link para cada exercicio-->
+        <a href wm-nav="exercicios/tegsNaoVisuais.html">10 - tegs não visuais </a>|<!--vou ter um link para cada exercicio-->
+        
+    </nav>
+    <section id="conteudo"></section>
+    <footer>
+        Curso de Web Moderno
+    </footer>
+    <script>
+        //aq vai javaScript
+        //primeiro tenho que interceptar o clique do mouse
+        //document.querySelectorAll() ==> vai pegar todos os links da navegação (nav)
+        //para selecionar a teg pasta colocar no paremetro o nome da teg no caso a
+        document.querySelectorAll('[wm-nav').forEach(link => {
+            const conteudo = document.getElementById('conteudo')//usado para obter o conteudo
+            //vou associar ao evento de clique uma função
+            link.onclick = function (e) {//e ==> evento que vc recebe do clique
+                e.preventDefault()//previni que o comportamento padrão ocorra(no caso o evento padrao seria de ir para outra pagina)
+                fetch(link.getAttribute('wm-nav'))//agora vou fazer um requisição ajax e vou colocar ela dentro do conteudo
+                    .then(resp => resp.text())//resp.text() ==> responsavel por pegar o conteudo html da pagnia que eu fiz a requisição
+                    .then(html => conteudo.innerHTML = html)
+
+            }
+        })
+    </script>
+</body>
+</html>

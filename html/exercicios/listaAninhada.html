@@ -1,0 +1,58 @@
+<h1>Projeto</h1>
+<!--representar as pastas e os arquivos de um projeto-->
+
+<ul class="tree">
+    <li>
+        <span wm-folder>backend</span>
+        <ul>
+            <li>
+                <span wm-folder>app</span>
+                <ul>
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <span wm-folder>config</span>
+                <ul>
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span wm-folder>frontend</span>
+        <ul>
+            <li>
+                <span wm-folder>public</span>
+                <ul>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+<!--para aplicar o css do link tenho que colocar a ul para apontar para tree-->
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<!--01- cada elemento que representa uma pasta vou envolver dentro de um spam marcando com wm-folder
+    02- vou selecionar todos que estao marcados com wm-folder usando document.querySelectorAll('[wm-folder]')
+    03- vou fazer um foreach para pegar cada elemento e quando clicar nele, no on click ele ira dispara uma função que vai ou fechar ou abrir
+    04- pegar as ul
+    *** none = não visivel || block = visivel
+-->
+<script>
+    document.querySelectorAll('[wm-folder]').forEach(folder=>{
+        folder.onclick = function(e) {
+            const ul = folder.nextElementSibling//consigoarmazenar as minhas ul dentro da constante ul
+            const d = ul.style.display
+            console.log('teste')
+            ul.style.display = d === 'none' ? 'block' : 'none'
+        }
+    })
+</script>

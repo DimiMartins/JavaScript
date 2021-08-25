@@ -1,0 +1,60 @@
+<!--teg que define uma tabela = table-->
+<table>
+    <caption>Produtos</caption><!--o que representa essa tabela colocamos no caption-->
+    <thead><!--posso ou não colocar-->
+        <tr><!--linha-->
+            <th>Produto</th><!--table head ==> tenho um tehead para cada categoria da minha tabela-->
+            <th>preço</th>
+            <th>quantidade</th>
+            <th>total</th>
+        </tr>
+    </thead>
+    <tbody><!--corpo da minha tabela-->
+        <tr><!--tr =primeira linha da tabela-->
+            <td>Ipad</td>
+            <td>3289</td>
+            <td>5</td>
+            <td>16455</td>
+        </tr>
+        <tr><!--tr =primeira linha da tabela-->
+            <td>sansung s9</td>
+            <td>2649</td>
+            <td>9</td>
+            <td>21192</td>
+        </tr>
+    </tbody>
+    <!--no rodape vou ter apenas 2 informações
+    o label total e a soma dos 2 totais-->
+    <tfoot>
+        <!--colspan = ocupa mais colunas 
+        rolspan = ocupa mais linhas-->
+        <tr>
+            <td colspan="3">Total</td><!--aumenta o tamnaho de espaços usados-->
+            <td>37637</td>
+        </tr>
+    </tfoot>
+</table>
+
+<!--aplicando estilos na tabela-->
+<style>
+    table{
+        border-collapse: collapse;/*sem borda*/
+    }
+    th,td{
+        padding: 10 px; /* para deixara a tabela mais espaçada */
+    }
+    /* no tr que esta dentro de thead aplique esses estilos */
+    thead tr{
+        border-bottom: solid 3 px #444;
+    }
+
+    tbody tr:hover{
+        background-color: #dedede;
+    }
+
+    tfoot{
+        background-color: #444;
+        color: #fff;
+        font-weight: bold;
+    }
+</style>

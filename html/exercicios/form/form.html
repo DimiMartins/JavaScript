@@ -1,0 +1,53 @@
+<!--para formularios prefira post ao inves de get-->
+
+<h1>Formulario</h1>
+    <!-- action="http://localhost:3003/usuarios" -->
+<form                                               method="POST">
+    <input type="hidden" name="id" value="3"><!--input escondido-->
+    <input type="text" name="nome"><!--caixa onde vai ser digitado o nome-->
+    <!--outros tipos de input-->
+    <input type="password" name="senha">
+    <textarea name="bio" cols="30" rows="10"></textarea>
+    <div>
+        <!--o valor que vai ser enviado para o backend vai dentro de value-->
+        <input type="radio" name="tipo" value="admin"> Admin
+        <input type="radio" name="tipo" value="regular"> Regular
+        <input type="radio" name="tipo" value="professor"> Professor
+    </div>
+    <div>
+        <input type="checkbox" name="ativo"> Ativo
+    </div>
+    <select name="estado">
+        <option>Selecione</option>
+        <option value="ac">AC</option>
+        <option value="sc">SC</option>
+        <option value="sp">SP</option>
+        <option value="rs">RS</option>
+   </select>
+   <br/><br>
+    <!--select de multiplas opções-->
+    <select name="interesses" multiple size="7">
+        <option value="js">JavaScript</option>
+        <option value="java">Java</option>
+        <option value="php">PHP</option>
+        <option value="python">Python</option>
+    </select>
+<br><br>
+    <button formaction="http://localhost:3003/usuarios" >Incluir</button>
+    <button formaction="http://localhost:3003/usuarios/3">Alterar</button><!--colocando a action diretamente no botao-->
+</form>
+
+<style>
+    /* aplicando estilo em input e textarea */
+    input,
+    textarea
+    select{
+        display: block;/* coloca um elemento em cada linha */
+        margin-bottom: 10px;/*  deixa um espaçamento entre os imputs */
+    }
+    /* aplicanto estilo no input do tipo radio e checkbox*/
+    input[type=radio],
+    input[type=checkbox]{
+    display: inline;
+    }
+</style>
